@@ -12,12 +12,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var textImage: UILabel!
     @IBOutlet weak var Imageview: UIImageView!
     
-    
+    @objc func timerFired() {
+          print("Timer Called with interval 30seconds")
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        mostrarImagenes()
     }
 
     func mostrarImagenes(){
@@ -29,11 +31,20 @@ class ViewController: UIViewController {
                         UIImage(named: "mondongo"),
                         UIImage(named: "neko"),
                         UIImage(named: "vaporeon")]
-        for x in 0...imagenes.count{
-            Imageview.image = imagenes[x]
-            textImage.text = "Imagen " + String(x)
-            sleep(4)
+        var imgpos = 0
+        let temporizador = Timer.init(timeInterval: 3, repeats: true) { [self] (timer) in
+            print(imgpos)
+            Imageview.image = imagenes[imgpos]
+            textImage.text = "Imagen " + String(imgpos)
+            if imgpos == imagenes.count-1 {
+                timer.invalidate()
+                print("invalidado")
+            }
+            imgpos = imgpos+1
+            
         }
+        
+        temporizador.fire()
     }
 }
 
