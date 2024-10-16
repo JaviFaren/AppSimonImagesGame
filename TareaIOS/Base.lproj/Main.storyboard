@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TareaIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cNg-C9-1yp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UXK-h5-c2z">
+                                <rect key="frame" x="15" y="94" width="384" height="359"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image Num" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSS-hx-wCJ">
+                                <rect key="frame" x="40" y="620" width="334" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" systemColor="systemIndigoColor"/>
+                                <color key="highlightedColor" systemColor="linkColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="egQ-9y-bz9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="egQ-9y-bz9" firstAttribute="trailing" secondItem="UXK-h5-c2z" secondAttribute="trailing" constant="15" id="DvW-cr-Mhm"/>
+                            <constraint firstItem="egQ-9y-bz9" firstAttribute="centerY" secondItem="UXK-h5-c2z" secondAttribute="bottom" id="E0P-yn-Qww"/>
+                            <constraint firstItem="UXK-h5-c2z" firstAttribute="leading" secondItem="egQ-9y-bz9" secondAttribute="leading" constant="15" id="Kzb-wV-dfu"/>
+                            <constraint firstItem="UXK-h5-c2z" firstAttribute="top" secondItem="egQ-9y-bz9" secondAttribute="top" constant="50" id="ibI-gg-tOK"/>
+                            <constraint firstItem="JSS-hx-wCJ" firstAttribute="leading" secondItem="egQ-9y-bz9" secondAttribute="leading" constant="40" id="oJl-WR-apt"/>
+                            <constraint firstItem="JSS-hx-wCJ" firstAttribute="top" secondItem="UXK-h5-c2z" secondAttribute="bottom" constant="167" id="xFu-ze-sex"/>
+                            <constraint firstItem="egQ-9y-bz9" firstAttribute="trailing" secondItem="JSS-hx-wCJ" secondAttribute="trailing" constant="40" id="xlL-qr-sMl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Imageview" destination="UXK-h5-c2z" id="OgE-Ct-D08"/>
+                        <outlet property="textImage" destination="JSS-hx-wCJ" id="VXs-OF-mvg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1371.0144927536232" y="175.44642857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="aEZ-Ni-CJo">
+            <objects>
+                <viewController id="l3f-J3-h7U" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="arB-FL-p8r">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="HLc-pu-i0r"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vik-x9-cO4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-654" y="175"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
