@@ -12,6 +12,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var textImage: UILabel!
     @IBOutlet weak var Imageview: UIImageView!
     
+    @IBOutlet weak var botonContinuar: UIButton!
+    //Botones para elegir imagenes en orden
+    
+    
     let imagenesOrigen = [UIImage(named: "demonio"),
                     UIImage(named: "duolingo"),
                     UIImage(named: "franco"),
@@ -25,6 +29,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.textImage.alpha = 0
+        self.botonContinuar.alpha = 0
         mostrarImagenes()
     }
 
@@ -47,12 +52,15 @@ class ViewController: UIViewController {
             }
             if imgpos == imgRandom.count {
                 timer.invalidate()
+                self.botonContinuar.alpha = 1
             }
             else{
                 imgpos = imgpos+1
             }
-            
         }
+    }
+    
+    func seleccionIMGs(){
         
     }
 }

@@ -20,11 +20,20 @@
                                 <rect key="frame" x="15" y="50" width="384" height="354"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image Num" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSS-hx-wCJ">
-                                <rect key="frame" x="40" y="571" width="334" height="36"/>
+                                <rect key="frame" x="40" y="464" width="334" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" systemColor="systemIndigoColor"/>
                                 <color key="highlightedColor" systemColor="linkColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIR-r0-qWF">
+                                <rect key="frame" x="100" y="600" width="214" height="36"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Continuar"/>
+                                <connections>
+                                    <segue destination="fju-7W-o2o" kind="show" id="NiX-wD-cva"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="egQ-9y-bz9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -32,21 +41,88 @@
                             <constraint firstItem="egQ-9y-bz9" firstAttribute="trailing" secondItem="UXK-h5-c2z" secondAttribute="trailing" constant="15" id="DvW-cr-Mhm"/>
                             <constraint firstItem="egQ-9y-bz9" firstAttribute="centerY" secondItem="UXK-h5-c2z" secondAttribute="bottom" id="E0P-yn-Qww"/>
                             <constraint firstItem="UXK-h5-c2z" firstAttribute="leading" secondItem="egQ-9y-bz9" secondAttribute="leading" constant="15" id="Kzb-wV-dfu"/>
+                            <constraint firstItem="JIR-r0-qWF" firstAttribute="leading" secondItem="egQ-9y-bz9" secondAttribute="leading" constant="100" id="X3x-ab-Wkl"/>
+                            <constraint firstItem="JIR-r0-qWF" firstAttribute="top" secondItem="JSS-hx-wCJ" secondAttribute="bottom" constant="100" id="aTr-fQ-vX5"/>
+                            <constraint firstItem="egQ-9y-bz9" firstAttribute="trailing" secondItem="JIR-r0-qWF" secondAttribute="trailing" constant="100" id="fIl-eo-Web"/>
                             <constraint firstItem="UXK-h5-c2z" firstAttribute="top" secondItem="egQ-9y-bz9" secondAttribute="top" constant="50" id="ibI-gg-tOK"/>
                             <constraint firstItem="JSS-hx-wCJ" firstAttribute="leading" secondItem="egQ-9y-bz9" secondAttribute="leading" constant="40" id="oJl-WR-apt"/>
-                            <constraint firstItem="JSS-hx-wCJ" firstAttribute="top" secondItem="UXK-h5-c2z" secondAttribute="bottom" constant="167" id="xFu-ze-sex"/>
+                            <constraint firstItem="JSS-hx-wCJ" firstAttribute="top" secondItem="UXK-h5-c2z" secondAttribute="bottom" constant="60" id="xFu-ze-sex"/>
                             <constraint firstItem="egQ-9y-bz9" firstAttribute="trailing" secondItem="JSS-hx-wCJ" secondAttribute="trailing" constant="40" id="xlL-qr-sMl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dE5-tO-Sif"/>
                     <connections>
                         <outlet property="Imageview" destination="UXK-h5-c2z" id="OgE-Ct-D08"/>
+                        <outlet property="botonContinuar" destination="JIR-r0-qWF" id="NNu-mt-TXt"/>
                         <outlet property="textImage" destination="JSS-hx-wCJ" id="VXs-OF-mvg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1496" y="175"/>
+            <point key="canvasLocation" x="-733.33333333333337" y="123.88392857142857"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Uny-A5-wHJ">
+            <objects>
+                <viewController id="fju-7W-o2o" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J28-cD-XiE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hUa-6k-fma" userLabel="botondemonio">
+                                <rect key="frame" x="20" y="353" width="150" height="180"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="demonio"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mqt-sn-4tE" userLabel="botonFranco">
+                                <rect key="frame" x="212" y="175" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="franco"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4FR-Lz-Dn2" userLabel="botonMalphite">
+                                <rect key="frame" x="212" y="393" width="150" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="malphite"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ve3-74-u6H" userLabel="botonNeko">
+                                <rect key="frame" x="20" y="552" width="150" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="neko"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xhG-uY-7nA" userLabel="botonMondongo">
+                                <rect key="frame" x="20" y="175" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="mondongo"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Z0P-vk-hnx" userLabel="botonduolingo">
+                                <rect key="frame" x="212" y="30" width="150" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="duolingo"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMD-qC-HeK" userLabel="botonBandera">
+                                <rect key="frame" x="20" y="30" width="75" height="50"/>
+                                <state key="normal" image="banderatonga"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WNx-61-mti" userLabel="botonVaporeon">
+                                <rect key="frame" x="212" y="552" width="150" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="vaporeon"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="EvD-Yz-Toy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xhG-uY-7nA" firstAttribute="top" secondItem="lMD-qC-HeK" secondAttribute="bottom" constant="45" id="5qo-Jk-H2l"/>
+                            <constraint firstItem="lMD-qC-HeK" firstAttribute="top" secondItem="EvD-Yz-Toy" secondAttribute="top" constant="30" id="74Y-YM-EP6"/>
+                            <constraint firstItem="lMD-qC-HeK" firstAttribute="leading" secondItem="EvD-Yz-Toy" secondAttribute="leading" constant="20" id="F2N-wR-uwk"/>
+                            <constraint firstItem="Z0P-vk-hnx" firstAttribute="leading" secondItem="lMD-qC-HeK" secondAttribute="trailing" constant="42" id="Son-DX-XSP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="OxC-hK-XFp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hns-eT-0vC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117" y="137"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="aEZ-Ni-CJo">
@@ -56,8 +132,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VC2-nt-2az">
-                                <rect key="frame" x="30" y="244" width="354" height="72"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VC2-nt-2az">
+                                <rect key="frame" x="30" y="244" width="354" height="70"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <state key="normal" title="Jugar"/>
@@ -65,9 +141,14 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="Zir-wa-2LI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cM4-yr-OB9">
-                                <rect key="frame" x="30" y="416" width="354" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cM4-yr-OB9">
+                                <rect key="frame" x="30" y="416" width="354" height="70"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="Marcadores"/>
+                                <connections>
+                                    <segue destination="Zhk-Ta-216" kind="show" id="wgz-IV-4dl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HLc-pu-i0r"/>
@@ -84,30 +165,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vik-x9-cO4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-655.07246376811599" y="174.77678571428569"/>
+            <point key="canvasLocation" x="-1606" y="435"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="sBB-PW-PNW">
             <objects>
                 <viewController id="Zhk-Ta-216" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q2K-Nf-yY3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="64s-Br-AI6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="NTK-cy-Fl6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ToB-mT-W0n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="51" y="168"/>
+            <point key="canvasLocation" x="-733" y="769"/>
         </scene>
     </scenes>
     <resources>
+        <image name="banderatonga" width="960" height="480"/>
+        <image name="demonio" width="300" height="391"/>
+        <image name="duolingo" width="874" height="691"/>
+        <image name="franco" width="900" height="900"/>
+        <image name="malphite" width="300" height="168"/>
+        <image name="mondongo" width="201" height="251"/>
+        <image name="neko" width="360" height="572"/>
+        <image name="vaporeon" width="800" height="800"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
