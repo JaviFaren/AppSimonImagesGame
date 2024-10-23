@@ -13,8 +13,37 @@ class ViewController: UIViewController {
     @IBOutlet weak var Imageview: UIImageView!
     
     @IBOutlet weak var botonContinuar: UIButton!
-    //Botones para elegir imagenes en orden
     
+    //Botones para elegir imagenes en orden
+    var numeroSeleccion = -1
+    @IBAction func botonBandera(_ sender: Any) {
+        
+    }
+    @IBAction func botonDemonio(_ sender: Any) {
+        
+    }
+    @IBAction func botonFranco(_ sender: Any) {
+        
+    }
+    @IBAction func botonNeko(_ sender: Any) {
+        
+    }
+    
+    @IBAction func botonDuolingo(_ sender: Any) {
+        
+    }
+    @IBAction func botonMalphite(_ sender: Any) {
+        
+    }
+    @IBAction func botonMondongo(_ sender: Any) {
+        
+    }
+    @IBAction func botonVaporeon(_ sender: Any) {
+        
+    }
+    @IBAction func botonConfirmacion(_ sender: Any) {
+        
+    }
     
     let imagenesOrigen = [UIImage(named: "demonio"),
                     UIImage(named: "duolingo"),
