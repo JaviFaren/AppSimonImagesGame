@@ -63,23 +63,24 @@ class ViewController: UIViewController {
     }
 
     func mostrarImagenes(){
-        var imagenes = Array(imagenesOrigen)
-        
-        var imgRandom = [UIImage]()
-        for _ in imagenesOrigen{
-            let randNum = Int.random(in: 0..<(imagenes.count))
-            imgRandom.append(imagenes[randNum]!)
-            imagenes.remove(at: randNum)
+        var imagenesPos = [Int]()
+        for (index, _) in imagenesOrigen.enumerated(){
+            imagenesPos.append(index)
         }
+        
+        imagenesPos.shuffle()
+        
+        let imagenesRandom = Array(imagenesPos)
+        
         
         var imgpos = 0
         Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { (timer) in
-            if imgpos <= imgRandom.count-1{
-                self.Imageview.image = imgRandom[imgpos]
+            if imgpos <= imagenesRandom.count-1{
+                self.Imageview.image = self.imagenesOrigen[imagenesRandom[imgpos]]
                 self.textImage.alpha = 1
                 self.textImage.text = "Imagen " + String(imgpos+1)
             }
-            if imgpos == imgRandom.count {
+            if imgpos == imagenesRandom.count {
                 timer.invalidate()
                 self.botonContinuar.alpha = 1
             }
