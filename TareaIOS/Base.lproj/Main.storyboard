@@ -70,31 +70,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wb7-4U-ffz" userLabel="fila1">
-                                <rect key="frame" x="30" y="30" width="160" height="700"/>
+                                <rect key="frame" x="30" y="30" width="160" height="600"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFa-B3-0G2" userLabel="botonBandera">
-                                        <rect key="frame" x="0.0" y="0.0" width="160" height="167.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="142.5"/>
                                         <state key="normal" title="Button" image="banderatonga"/>
                                         <connections>
                                             <action selector="botonBandera:" destination="tYL-fr-nY1" eventType="touchUpInside" id="VmB-CV-dwK"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anC-KW-wZu" userLabel="botonDemonio">
-                                        <rect key="frame" x="0.0" y="177.5" width="160" height="167.5"/>
+                                        <rect key="frame" x="0.0" y="152.5" width="160" height="142.5"/>
                                         <state key="normal" title="Button" image="demonio"/>
                                         <connections>
-                                            <action selector="botonDemonio:" destination="tYL-fr-nY1" eventType="touchUpInside" id="GGE-gg-cU7"/>
+                                            <action selector="DemonioButton:" destination="tYL-fr-nY1" eventType="touchUpInside" id="DNU-NZ-Fqt"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Jc-1b-Bcg" userLabel="botonFranco">
-                                        <rect key="frame" x="0.0" y="355" width="160" height="167.5"/>
+                                        <rect key="frame" x="0.0" y="305" width="160" height="142.5"/>
                                         <state key="normal" title="Button" image="franco"/>
                                         <connections>
                                             <action selector="botonFranco:" destination="tYL-fr-nY1" eventType="touchUpInside" id="1iU-Xl-vqw"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAw-4k-oaA">
-                                        <rect key="frame" x="0.0" y="532.5" width="160" height="167.5"/>
+                                        <rect key="frame" x="0.0" y="457.5" width="160" height="142.5"/>
                                         <state key="normal" title="Button" image="neko"/>
                                         <connections>
                                             <action selector="botonNeko:" destination="tYL-fr-nY1" eventType="touchUpInside" id="xou-ha-8Ug"/>
@@ -102,7 +102,7 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="700" id="JJn-EX-9g0"/>
+                                    <constraint firstAttribute="height" constant="600" id="JJn-EX-9g0"/>
                                     <constraint firstItem="lAw-4k-oaA" firstAttribute="top" secondItem="6Jc-1b-Bcg" secondAttribute="bottom" constant="10" id="NOE-wu-uip"/>
                                     <constraint firstItem="6Jc-1b-Bcg" firstAttribute="top" secondItem="anC-KW-wZu" secondAttribute="bottom" constant="10" id="WY9-XG-jK6"/>
                                     <constraint firstAttribute="width" constant="160" id="mLY-Oq-Sd5"/>
@@ -111,31 +111,31 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yvJ-NM-XR7" userLabel="fila2">
-                                <rect key="frame" x="224" y="30" width="160" height="700"/>
+                                <rect key="frame" x="224" y="30" width="160" height="600"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfv-Ll-kzC" userLabel="botonduolingo">
-                                        <rect key="frame" x="0.0" y="0.0" width="160" height="167.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="142.5"/>
                                         <state key="normal" title="Button" image="duolingo"/>
                                         <connections>
                                             <action selector="botonDuolingo:" destination="tYL-fr-nY1" eventType="touchUpInside" id="UHi-jv-7k0"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBa-la-hku" userLabel="botonmalphite">
-                                        <rect key="frame" x="0.0" y="177.5" width="160" height="167.5"/>
+                                        <rect key="frame" x="0.0" y="152.5" width="160" height="142.5"/>
                                         <state key="normal" title="Button" image="malphite"/>
                                         <connections>
                                             <action selector="botonMalphite:" destination="tYL-fr-nY1" eventType="touchUpInside" id="uEb-8o-Eqw"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tjk-Cu-2uG" userLabel="botonmondongo">
-                                        <rect key="frame" x="0.0" y="355" width="160" height="167.5"/>
+                                        <rect key="frame" x="0.0" y="305" width="160" height="142.5"/>
                                         <state key="normal" title="Button" image="mondongo"/>
                                         <connections>
                                             <action selector="botonMondongo:" destination="tYL-fr-nY1" eventType="touchUpInside" id="90R-rv-nQ3"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMe-H0-Lg8">
-                                        <rect key="frame" x="0.0" y="532.5" width="160" height="167.5"/>
+                                        <rect key="frame" x="0.0" y="457.5" width="160" height="142.5"/>
                                         <state key="normal" title="Button" image="vaporeon"/>
                                         <connections>
                                             <action selector="botonVaporeon:" destination="tYL-fr-nY1" eventType="touchUpInside" id="Pfz-9q-jgn"/>
@@ -144,11 +144,11 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="1mW-ca-5bF"/>
-                                    <constraint firstAttribute="height" constant="700" id="n4Y-Gy-iES"/>
+                                    <constraint firstAttribute="height" constant="600" id="n4Y-Gy-iES"/>
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6h-dn-BVW">
-                                <rect key="frame" x="60" y="752" width="294" height="36"/>
+                                <rect key="frame" x="60" y="732" width="294" height="36"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Confirmar Selección"/>
@@ -156,12 +156,21 @@
                                     <action selector="botonConfirmacion:" destination="tYL-fr-nY1" eventType="touchUpInside" id="BMq-w2-PrW"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkboxfinal" translatesAutoresizingMaskIntoConstraints="NO" id="kqF-sW-m3H">
+                                <rect key="frame" x="145" y="35" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="bXb-Ft-iRC"/>
+                                    <constraint firstAttribute="width" constant="40" id="mG8-ns-e1c"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EvD-Yz-Toy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="kqF-sW-m3H" firstAttribute="top" secondItem="wb7-4U-ffz" secondAttribute="top" constant="5" id="0EV-ZC-FDz"/>
+                            <constraint firstItem="wb7-4U-ffz" firstAttribute="trailing" secondItem="kqF-sW-m3H" secondAttribute="trailing" constant="5" id="7Fz-GB-lK6"/>
                             <constraint firstItem="wb7-4U-ffz" firstAttribute="leadingMargin" secondItem="EvD-Yz-Toy" secondAttribute="leading" constant="30" id="CDr-7V-vfP"/>
-                            <constraint firstItem="EvD-Yz-Toy" firstAttribute="bottom" secondItem="c6h-dn-BVW" secondAttribute="bottom" constant="20" id="IZC-PV-ji9"/>
+                            <constraint firstItem="EvD-Yz-Toy" firstAttribute="bottom" secondItem="c6h-dn-BVW" secondAttribute="bottom" constant="40" id="IZC-PV-ji9"/>
                             <constraint firstItem="wb7-4U-ffz" firstAttribute="top" secondItem="EvD-Yz-Toy" secondAttribute="top" constant="30" id="Qok-DE-Ml3"/>
                             <constraint firstItem="EvD-Yz-Toy" firstAttribute="trailing" secondItem="c6h-dn-BVW" secondAttribute="trailing" constant="60" id="Rbc-vu-HDs"/>
                             <constraint firstItem="yvJ-NM-XR7" firstAttribute="top" secondItem="EvD-Yz-Toy" secondAttribute="top" constant="30" id="TCy-d1-jdj"/>
@@ -238,6 +247,7 @@
     </scenes>
     <resources>
         <image name="banderatonga" width="960" height="480"/>
+        <image name="checkboxfinal" width="600" height="600"/>
         <image name="demonio" width="300" height="391"/>
         <image name="duolingo" width="874" height="691"/>
         <image name="franco" width="900" height="900"/>
