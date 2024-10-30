@@ -16,6 +16,8 @@ let imagenesOrigen = [UIImage(named: "demonio"),
                 UIImage(named: "neko"),
                 UIImage(named: "vaporeon")]
 
+var imagenesPos = [Int]()
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var textImage: UILabel!
@@ -38,12 +40,13 @@ class ViewController: UIViewController {
     }
 
     func mostrarImagenes(){
-        var imagenesPos = [Int]()
+        
         for (index, _) in imagenesOrigen.enumerated(){
             imagenesPos.append(index)
         }
         
         imagenesPos.shuffle()
+        print(imagenesPos)
         
         
         var imgpos = 0
