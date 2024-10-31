@@ -7,11 +7,11 @@
 
 import UIKit
 
-let imagenesOrigen = [UIImage(named: "demonio"),
+let imagenesOrigen = [UIImage(named: "banderatonga"),
                 UIImage(named: "duolingo"),
-                UIImage(named: "franco"),
-                UIImage(named: "banderatonga"),
+                UIImage(named: "demonio"),
                 UIImage(named: "malphite"),
+                UIImage(named: "franco"),
                 UIImage(named: "mondongo"),
                 UIImage(named: "neko"),
                 UIImage(named: "vaporeon")]

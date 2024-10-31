@@ -17,13 +17,16 @@ class ResultController: UIViewController {
     @IBOutlet weak var ConfirmarButton: UIButton!
     @IBOutlet weak var TextoPuntuacion: UILabel!
     
+    @IBOutlet var checkboxes: [UIImageView]!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        for _ in imagenesOrigen{
+        for (index, _) in imagenesOrigen.enumerated(){
             imagenSeleccionado.append(false)
+            checkboxes[index].alpha = 0
         }
         ConfirmarButton.alpha = 0
         TextoPuntuacion.alpha = 0
@@ -55,10 +58,12 @@ class ResultController: UIViewController {
             imagenSeleccionado[tag] = false
             
             ConfirmarButton.alpha = 0
+            checkboxes[tag].alpha = 0
         }
         else if !imagenSeleccionado[tag]{
             respuestasUser.append(tag)
             imagenSeleccionado[tag] = true
+            checkboxes[tag].alpha = 1
             
             if respuestasUser.count == imagenesOrigen.count{
                 ConfirmarButton.alpha = 1
