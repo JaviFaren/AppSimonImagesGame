@@ -8,6 +8,7 @@
 import UIKit
 
 var puntuacionFinal = 0
+var perfectscore = false
 
 class ResultController: UIViewController {
     
@@ -16,6 +17,9 @@ class ResultController: UIViewController {
     
     @IBOutlet weak var ConfirmarButton: UIButton!
     @IBOutlet weak var TextoPuntuacion: UILabel!
+    
+    @IBOutlet weak var BotonMarcadoresNo: UIButton!
+    @IBOutlet weak var BotonMarcadoresSi: UIButton!
     
     @IBOutlet var checkboxes: [UIImageView]!
     
@@ -30,6 +34,8 @@ class ResultController: UIViewController {
         }
         ConfirmarButton.alpha = 0
         TextoPuntuacion.alpha = 0
+        BotonMarcadoresNo.alpha = 0
+        BotonMarcadoresSi.alpha = 0
     }
     
     @IBAction func Botones(_ sender: UIButton) {
@@ -46,9 +52,44 @@ class ResultController: UIViewController {
                 break
             }
         }
+        
         puntuacionFinal = 125 * streak
         TextoPuntuacion.text = "Has acertado " + String(streak) + " de " + String(imagenesPos.count) + "\nTu puntuación es de: " + String(puntuacionFinal)
         TextoPuntuacion.alpha = 1
+        
+        if(streak == respuestasUser.count-1){
+            perfectscore = true
+        }
+        else{
+            perfectscore = false
+        }
+        
+        if let puntosAlm = UserDefaults.standard.value(forKey: "PuntuacionMax")
+        {
+            UserDefaults.standard.set(puntuacionFinal, forKey: "PuntuacionMax")
+            if puntuacionFinal > puntosAlm as! Int{
+                TextoPuntuacion.text = TextoPuntuacion.text! + "\nNuevo Record! ¿Quieres subirlo a marcadores?"
+                
+                BotonMarcadoresNo.alpha = 1
+                BotonMarcadoresSi.alpha = 1
+            }
+        } else {
+            UserDefaults.standard.set(puntuacionFinal, forKey: "PuntuacionMax")
+        }
+    }
+    
+    @IBAction func NoSubir(_ sender: Any) {
+        if perfectscore{
+            TextoPuntuacion.text = "¿Quieres seguir jugando? (acumula mas puntos)"
+        }
+        else{
+            TextoPuntuacion.text = "¿Quieres iniciar otra partida?"
+        }
+        
+    }
+    
+    @IBAction func SiSubir(_ sender: Any) {
+        
     }
     
     
