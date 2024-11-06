@@ -46,11 +46,10 @@ class ViewController: UIViewController {
         }
         
         imagenesPos.shuffle()
-        print(imagenesPos)
         
         
         var imgpos = 0
-        Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { (timer) in
+        Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { (timer) in
             if imgpos <= imagenesPos.count-1{
                 self.Imageview.image = imagenesOrigen[imagenesPos[imgpos]]
                 self.textImage.alpha = 1
