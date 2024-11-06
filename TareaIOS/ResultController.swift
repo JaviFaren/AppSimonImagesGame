@@ -94,15 +94,15 @@ class ResultController: UIViewController {
     }
     
     @IBAction func SiSubir(_ sender: Any) {
+        peticionApi(username: "Galactic")
         if perfectscore{
             //Subir datos a api
-            peticionApi()
             TextoPuntuacion.text = "¿Quieres seguir jugando? (acumula mas puntos)"
         }
         else{
             TextoPuntuacion.text = "¿Quieres iniciar otra partida?"
         }
-        peticionApi()
+        
     }
     
     
@@ -125,7 +125,7 @@ class ResultController: UIViewController {
         }
     }
     
-    func peticionApi(){
+    func peticionApi(username: String){
         
 
         struct Puntuacion: Codable {
@@ -134,7 +134,7 @@ class ResultController: UIViewController {
         }
         
         
-        let scoresURL = URL(string: "https://qhavrvkhlbmsljgmbknr.supabase.co/rest/v1/scores?select=*")
+        let scoresURL = URL(string: "https://qhavrvkhlbmsljgmbknr.supabase.co/rest/v1/scores?name=eq." + username)
         if let unwrappedURL = scoresURL {
             var request = URLRequest(url: unwrappedURL)
             request.addValue(apiKEY, forHTTPHeaderField: "apikey")
@@ -144,6 +144,7 @@ class ResultController: UIViewController {
                     do {
                         let arrayDatos = try JSONDecoder().decode([Puntuacion].self, from: data) as [Puntuacion]
                         // HERE'S WHERE YOUR DATA IS
+                        print(arrayDatos)
                         
                     } catch {
                         print(error.localizedDescription)

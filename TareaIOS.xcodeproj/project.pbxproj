@@ -14,6 +14,7 @@
 		11E2A5CD2CB7F44F00878A56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11E2A5CB2CB7F44F00878A56 /* Main.storyboard */; };
 		11E2A5CF2CB7F45000878A56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11E2A5CE2CB7F45000878A56 /* Assets.xcassets */; };
 		11E2A5D22CB7F45000878A56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11E2A5D02CB7F45000878A56 /* LaunchScreen.storyboard */; };
+		7F1AA1542CDB88BA003F7689 /* DBUploadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1AA1532CDB88BA003F7689 /* DBUploadController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		11E2A5CE2CB7F45000878A56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11E2A5D12CB7F45000878A56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11E2A5D32CB7F45000878A56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F1AA1532CDB88BA003F7689 /* DBUploadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUploadController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				11E2A5C72CB7F44F00878A56 /* SceneDelegate.swift */,
 				11E2A5C92CB7F44F00878A56 /* ViewController.swift */,
 				11BD54762CD2277E00640947 /* ResultController.swift */,
+				7F1AA1532CDB88BA003F7689 /* DBUploadController.swift */,
 				11E2A5CB2CB7F44F00878A56 /* Main.storyboard */,
 				11E2A5CE2CB7F45000878A56 /* Assets.xcassets */,
 				11E2A5D02CB7F45000878A56 /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 				11BD54772CD2277E00640947 /* ResultController.swift in Sources */,
 				11E2A5CA2CB7F44F00878A56 /* ViewController.swift in Sources */,
 				11E2A5C62CB7F44F00878A56 /* AppDelegate.swift in Sources */,
+				7F1AA1542CDB88BA003F7689 /* DBUploadController.swift in Sources */,
 				11E2A5C82CB7F44F00878A56 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
