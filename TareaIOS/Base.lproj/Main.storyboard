@@ -32,7 +32,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Continuar"/>
                                 <connections>
-                                    <segue destination="fju-7W-o2o" kind="show" id="NiX-wD-cva"/>
+                                    <action selector="cambiarPantallaButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ahY-QC-6Ub"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -56,6 +56,7 @@
                         <outlet property="Imageview" destination="UXK-h5-c2z" id="OgE-Ct-D08"/>
                         <outlet property="botonContinuar" destination="JIR-r0-qWF" id="NNu-mt-TXt"/>
                         <outlet property="textImage" destination="JSS-hx-wCJ" id="VXs-OF-mvg"/>
+                        <segue destination="fju-7W-o2o" kind="show" identifier="SolutionScreen" id="7VD-4Y-mqy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -213,7 +214,7 @@
                                     <constraint firstAttribute="height" constant="40" id="VKf-oi-fyg"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dadadadadadad dadadada dadadad dadadad dadadad adada" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKD-Vh-ziz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dadadadadadad dadadada dadadad dadadad dadadad adada" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKD-Vh-ziz">
                                 <rect key="frame" x="20" y="640" width="374" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0039215686274509803" green="0.45490196078431372" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -240,7 +241,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Si"/>
                                 <connections>
-                                    <action selector="SiSubir:" destination="fju-7W-o2o" eventType="touchUpInside" id="rVG-DL-8qO"/>
+                                    <action selector="SiSubir:" destination="fju-7W-o2o" eventType="touchUpInside" id="yld-Af-oSu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -293,6 +294,8 @@
                         <outletCollection property="checkboxes" destination="7aK-7k-EKN" collectionClass="NSMutableArray" id="9Fh-P5-yd5"/>
                         <outletCollection property="checkboxes" destination="kmI-l9-s04" collectionClass="NSMutableArray" id="t5d-KR-EdK"/>
                         <outletCollection property="checkboxes" destination="oTn-5n-9ZB" collectionClass="NSMutableArray" id="K7G-8e-RPy"/>
+                        <segue destination="XU1-sE-wZw" kind="show" identifier="Subirdatos" id="VAd-7N-5TM"/>
+                        <segue destination="BYZ-38-t0r" kind="show" id="yjm-9V-rga"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hns-eT-0vC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -304,20 +307,21 @@
             <objects>
                 <viewController id="XU1-sE-wZw" customClass="DBUploadController" customModule="TareaIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fec-zi-2zL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="62f-QC-57X"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="hLB-Cr-HEh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jV6-xE-uLp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="963" y="144"/>
         </scene>
-        <!--View Controller-->
+        <!--Menu Controller-->
         <scene sceneID="aEZ-Ni-CJo">
             <objects>
-                <viewController id="l3f-J3-h7U" sceneMemberID="viewController">
+                <viewController id="l3f-J3-h7U" customClass="MenuController" customModule="TareaIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="arB-FL-p8r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -340,11 +344,20 @@
                                     <segue destination="Zhk-Ta-216" kind="show" id="wgz-IV-4dl"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tu puntuacion máxima es:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gs-SY-hiT">
+                                <rect key="frame" x="40" y="128" width="334" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HLc-pu-i0r"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
+                            <constraint firstItem="4gs-SY-hiT" firstAttribute="top" secondItem="HLc-pu-i0r" secondAttribute="top" constant="80" id="2mv-YL-I8R"/>
+                            <constraint firstItem="4gs-SY-hiT" firstAttribute="leading" secondItem="HLc-pu-i0r" secondAttribute="leading" constant="40" id="3Gv-Ql-yhG"/>
                             <constraint firstItem="VC2-nt-2az" firstAttribute="leading" secondItem="HLc-pu-i0r" secondAttribute="leading" constant="30" id="6ub-ta-oXe"/>
+                            <constraint firstItem="HLc-pu-i0r" firstAttribute="trailing" secondItem="4gs-SY-hiT" secondAttribute="trailing" constant="40" id="8Yz-2r-6uF"/>
                             <constraint firstItem="HLc-pu-i0r" firstAttribute="trailing" secondItem="cM4-yr-OB9" secondAttribute="trailing" constant="30" id="Ep5-CF-Ibn"/>
                             <constraint firstItem="HLc-pu-i0r" firstAttribute="trailing" secondItem="VC2-nt-2az" secondAttribute="trailing" constant="30" id="IMF-wg-40G"/>
                             <constraint firstItem="cM4-yr-OB9" firstAttribute="top" secondItem="VC2-nt-2az" secondAttribute="bottom" constant="100" id="JxU-AD-kBz"/>
@@ -352,6 +365,9 @@
                             <constraint firstItem="cM4-yr-OB9" firstAttribute="leading" secondItem="HLc-pu-i0r" secondAttribute="leading" constant="30" id="aZo-K3-L4q"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="puntosText" destination="4gs-SY-hiT" id="oGK-jk-BUo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vik-x9-cO4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -374,6 +390,9 @@
             <point key="canvasLocation" x="-733" y="769"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="yjm-9V-rga"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="banderatonga" width="960" height="480"/>
         <image name="checkboxfinalfinal" width="600" height="600"/>

@@ -25,6 +25,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var botonContinuar: UIButton!
     
+    
+    
+    
     //Botones para elegir imagenes en orden
     var numeroSeleccion = -1
     
@@ -64,5 +67,13 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func cambiarPantallaButton(_ sender: Any) {
+        performSegue(withIdentifier: "SolutionScreen", sender: nil)
+        dismiss(animated: false)
+    }
+    
+    
+    
 }
 

@@ -11,6 +11,8 @@ var puntuacionFinal = 0
 var perfectscore = false
 let apiKEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFoYXZydmtobGJtc2xqZ21ia25yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA3MjY5MTgsImV4cCI6MjAxNjMwMjkxOH0.Ta-_lXGGwSiUGh0VC8tAFcFQqsqAvB8vvXJjubeQkx8"
 
+
+
 class ResultController: UIViewController {
     
     var respuestasUser = [Int]()
@@ -24,12 +26,14 @@ class ResultController: UIViewController {
     
     @IBOutlet var checkboxes: [UIImageView]!
     
-    
+    var LeaveButtonState = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         UserDefaults.standard.set(0, forKey: "PuntuacionMax")
+        
+        
         
         for (index, _) in imagenesOrigen.enumerated(){
             imagenSeleccionado.append(false)
@@ -69,15 +73,25 @@ class ResultController: UIViewController {
         
         if let puntosAlm = UserDefaults.standard.value(forKey: "PuntuacionMax")
         {
-            UserDefaults.standard.set(puntuacionFinal, forKey: "PuntuacionMax")
             if puntuacionFinal > puntosAlm as! Int{
                 TextoPuntuacion.text = TextoPuntuacion.text! + "\nNuevo Record! ¿Quieres subirlo a marcadores?"
                 
                 BotonMarcadoresNo.alpha = 1
                 BotonMarcadoresSi.alpha = 1
             }
-        } else {
-            UserDefaults.standard.set(puntuacionFinal, forKey: "PuntuacionMax")
+            else{
+                TextoPuntuacion.text = TextoPuntuacion.text! + "\n¿Quieres volver a intentarlo?"
+                LeaveButtonState = 1
+            }
+        }
+        else {
+            if puntuacionFinal > 0{
+                TextoPuntuacion.text = TextoPuntuacion.text! + "\nNuevo Record! ¿Quieres subirlo a marcadores?"
+            }
+            else{
+                TextoPuntuacion.text = TextoPuntuacion.text! + "\n¿Quieres volver a intentarlo?"
+                LeaveButtonState = 1
+            }
         }
         
         ConfirmarButton.alpha = 0
@@ -94,16 +108,9 @@ class ResultController: UIViewController {
     }
     
     @IBAction func SiSubir(_ sender: Any) {
-        peticionApi(username: "Galactic")
-        if perfectscore{
-            //Subir datos a api
-            TextoPuntuacion.text = "¿Quieres seguir jugando? (acumula mas puntos)"
-        }
-        else{
-            TextoPuntuacion.text = "¿Quieres iniciar otra partida?"
-        }
-        
+        performSegue(withIdentifier: "Subirdatos", sender: nil)
     }
+    
     
     
     func ButtonAction(tag: Int){
