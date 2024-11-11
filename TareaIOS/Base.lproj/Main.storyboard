@@ -295,7 +295,8 @@
                         <outletCollection property="checkboxes" destination="kmI-l9-s04" collectionClass="NSMutableArray" id="t5d-KR-EdK"/>
                         <outletCollection property="checkboxes" destination="oTn-5n-9ZB" collectionClass="NSMutableArray" id="K7G-8e-RPy"/>
                         <segue destination="XU1-sE-wZw" kind="show" identifier="Subirdatos" id="VAd-7N-5TM"/>
-                        <segue destination="BYZ-38-t0r" kind="show" id="yjm-9V-rga"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="ReturnToGame" id="yjm-9V-rga"/>
+                        <segue destination="l3f-J3-h7U" kind="show" identifier="ToMainMenu" id="9nR-5u-9iU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hns-eT-0vC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -309,6 +310,15 @@
                     <view key="view" contentMode="scaleToFill" id="fec-zi-2zL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Subiendo Datos..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRh-kN-5wB">
+                                <rect key="frame" x="86" y="92" width="242" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" systemColor="tintColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="62f-QC-57X"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -323,7 +333,7 @@
             <objects>
                 <viewController id="l3f-J3-h7U" customClass="MenuController" customModule="TareaIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="arB-FL-p8r">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VC2-nt-2az">
@@ -345,7 +355,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tu puntuacion máxima es:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gs-SY-hiT">
-                                <rect key="frame" x="40" y="128" width="334" height="30"/>
+                                <rect key="frame" x="40" y="80" width="334" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -365,6 +375,7 @@
                             <constraint firstItem="cM4-yr-OB9" firstAttribute="leading" secondItem="HLc-pu-i0r" secondAttribute="leading" constant="30" id="aZo-K3-L4q"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="mry-32-EYS"/>
                     <connections>
                         <outlet property="puntosText" destination="4gs-SY-hiT" id="oGK-jk-BUo"/>
                     </connections>
@@ -420,6 +431,9 @@
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

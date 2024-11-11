@@ -31,6 +31,8 @@ class ResultController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let targetVC = navigationController?.viewControllers.first(where: {$0 is ViewController})
+        navigationController?.popToViewController(targetVC!, animated: false)
         UserDefaults.standard.set(0, forKey: "PuntuacionMax")
         
         
@@ -60,7 +62,7 @@ class ResultController: UIViewController {
             }
         }
         
-        puntuacionFinal = 125 * streak
+        puntuacionFinal = puntuacionFinal + (125 * streak)
         TextoPuntuacion.text = "Has acertado " + String(streak) + " de " + String(imagenesPos.count) + "\nTu puntuación es de: " + String(puntuacionFinal)
         TextoPuntuacion.alpha = 1
         
@@ -98,17 +100,31 @@ class ResultController: UIViewController {
     }
     
     @IBAction func NoSubir(_ sender: Any) {
-        if perfectscore{
-            TextoPuntuacion.text = "¿Quieres seguir jugando? (acumula mas puntos)"
+        if LeaveButtonState == 0{
+            if perfectscore{
+                TextoPuntuacion.text = "¿Quieres seguir jugando? (acumula mas puntos)"
+            }
+            else{
+                TextoPuntuacion.text = "¿Quieres iniciar otra partida?"
+            }
         }
         else{
-            TextoPuntuacion.text = "¿Quieres iniciar otra partida?"
+            performSegue(withIdentifier: "ToMainMenu", sender: nil)
+            dismiss(animated: false)
         }
+        
         
     }
     
     @IBAction func SiSubir(_ sender: Any) {
-        performSegue(withIdentifier: "Subirdatos", sender: nil)
+        if LeaveButtonState == 0{
+            performSegue(withIdentifier: "Subirdatos", sender: nil)
+        }
+        else{
+            performSegue(withIdentifier: "ReturnToGame", sender: nil)
+            dismiss(animated: false)
+        }
+        
     }
     
     

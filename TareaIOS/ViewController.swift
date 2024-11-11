@@ -70,7 +70,6 @@ class ViewController: UIViewController {
     
     @IBAction func cambiarPantallaButton(_ sender: Any) {
         performSegue(withIdentifier: "SolutionScreen", sender: nil)
-        dismiss(animated: false)
     }
     
     
