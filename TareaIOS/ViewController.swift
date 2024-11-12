@@ -69,7 +69,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func cambiarPantallaButton(_ sender: Any) {
-        performSegue(withIdentifier: "SolutionScreen", sender: nil)
+        let viewanterior = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        let viewObjetivo = storyboard?.instantiateViewController(withIdentifier: "ResultController") as! ResultController
+        //viewObjetivo.modalPresentationStyle = .fullScreen
+        present(viewObjetivo, animated: false) {
+            //self.dismiss(animated: false)
+        }
+        
+        //performSegue(withIdentifier: "SolutionScreen", sender: nil)
     }
     
     

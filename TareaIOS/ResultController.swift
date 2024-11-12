@@ -31,8 +31,7 @@ class ResultController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let targetVC = navigationController?.viewControllers.first(where: {$0 is ViewController})
-        navigationController?.popToViewController(targetVC!, animated: false)
+        
         UserDefaults.standard.set(0, forKey: "PuntuacionMax")
         
         
@@ -45,6 +44,8 @@ class ResultController: UIViewController {
         TextoPuntuacion.alpha = 0
         BotonMarcadoresNo.alpha = 0
         BotonMarcadoresSi.alpha = 0
+        
+
     }
     
     @IBAction func Botones(_ sender: UIButton) {
@@ -118,11 +119,12 @@ class ResultController: UIViewController {
     
     @IBAction func SiSubir(_ sender: Any) {
         if LeaveButtonState == 0{
+            dismiss(animated: false)
             performSegue(withIdentifier: "Subirdatos", sender: nil)
         }
         else{
-            performSegue(withIdentifier: "ReturnToGame", sender: nil)
             dismiss(animated: false)
+            performSegue(withIdentifier: "ReturnToGame", sender: nil)
         }
         
     }
