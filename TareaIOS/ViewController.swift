@@ -7,16 +7,7 @@
 
 import UIKit
 
-let imagenesOrigen = [UIImage(named: "banderatonga"),
-                UIImage(named: "duolingo"),
-                UIImage(named: "demonio"),
-                UIImage(named: "malphite"),
-                UIImage(named: "franco"),
-                UIImage(named: "mondongo"),
-                UIImage(named: "neko"),
-                UIImage(named: "vaporeon")]
 
-var imagenesPos = [Int]()
 
 class ViewController: UIViewController {
 
@@ -69,14 +60,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func cambiarPantallaButton(_ sender: Any) {
-        let viewanterior = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        let viewObjetivo = storyboard?.instantiateViewController(withIdentifier: "ResultController") as! ResultController
-        //viewObjetivo.modalPresentationStyle = .fullScreen
-        present(viewObjetivo, animated: false) {
-            //self.dismiss(animated: false)
-        }
-        
-        //performSegue(withIdentifier: "SolutionScreen", sender: nil)
+        performSegue(withIdentifier: "SolutionScreen", sender: nil)
     }
     
     

@@ -7,9 +7,7 @@
 
 import UIKit
 
-var puntuacionFinal = 0
-var perfectscore = false
-let apiKEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFoYXZydmtobGJtc2xqZ21ia25yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA3MjY5MTgsImV4cCI6MjAxNjMwMjkxOH0.Ta-_lXGGwSiUGh0VC8tAFcFQqsqAvB8vvXJjubeQkx8"
+
 
 
 
@@ -27,6 +25,7 @@ class ResultController: UIViewController {
     @IBOutlet var checkboxes: [UIImageView]!
     
     var LeaveButtonState = 0
+    var KeepPoints = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +43,7 @@ class ResultController: UIViewController {
         TextoPuntuacion.alpha = 0
         BotonMarcadoresNo.alpha = 0
         BotonMarcadoresSi.alpha = 0
-        
+        LeaveButtonState = 0
 
     }
     
@@ -73,14 +72,12 @@ class ResultController: UIViewController {
         else{
             perfectscore = false
         }
-        
+        BotonMarcadoresNo.alpha = 1
+        BotonMarcadoresSi.alpha = 1
         if let puntosAlm = UserDefaults.standard.value(forKey: "PuntuacionMax")
         {
             if puntuacionFinal > puntosAlm as! Int{
                 TextoPuntuacion.text = TextoPuntuacion.text! + "\nNuevo Record! ¿Quieres subirlo a marcadores?"
-                
-                BotonMarcadoresNo.alpha = 1
-                BotonMarcadoresSi.alpha = 1
             }
             else{
                 TextoPuntuacion.text = TextoPuntuacion.text! + "\n¿Quieres volver a intentarlo?"
@@ -90,6 +87,7 @@ class ResultController: UIViewController {
         else {
             if puntuacionFinal > 0{
                 TextoPuntuacion.text = TextoPuntuacion.text! + "\nNuevo Record! ¿Quieres subirlo a marcadores?"
+                
             }
             else{
                 TextoPuntuacion.text = TextoPuntuacion.text! + "\n¿Quieres volver a intentarlo?"
@@ -104,14 +102,17 @@ class ResultController: UIViewController {
         if LeaveButtonState == 0{
             if perfectscore{
                 TextoPuntuacion.text = "¿Quieres seguir jugando? (acumula mas puntos)"
+                KeepPoints = true
+                LeaveButtonState = 1
             }
             else{
                 TextoPuntuacion.text = "¿Quieres iniciar otra partida?"
+                LeaveButtonState = 1
             }
         }
         else{
+            imagenesPos.removeAll()
             performSegue(withIdentifier: "ToMainMenu", sender: nil)
-            dismiss(animated: false)
         }
         
         
@@ -119,14 +120,15 @@ class ResultController: UIViewController {
     
     @IBAction func SiSubir(_ sender: Any) {
         if LeaveButtonState == 0{
-            dismiss(animated: false)
             performSegue(withIdentifier: "Subirdatos", sender: nil)
         }
         else{
-            dismiss(animated: false)
+            imagenesPos.removeAll()
+            if !KeepPoints{
+                puntuacionFinal = 0
+            }
             performSegue(withIdentifier: "ReturnToGame", sender: nil)
         }
-        
     }
     
     
@@ -150,34 +152,6 @@ class ResultController: UIViewController {
         }
     }
     
-    func peticionApi(username: String){
-        
-
-        struct Puntuacion: Codable {
-            let name: String
-            let score: Int
-        }
-        
-        
-        let scoresURL = URL(string: "https://qhavrvkhlbmsljgmbknr.supabase.co/rest/v1/scores?name=eq." + username)
-        if let unwrappedURL = scoresURL {
-            var request = URLRequest(url: unwrappedURL)
-            request.addValue(apiKEY, forHTTPHeaderField: "apikey")
-            let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
-                // you should put in error handling code, too
-                if let data = data {
-                    do {
-                        let arrayDatos = try JSONDecoder().decode([Puntuacion].self, from: data) as [Puntuacion]
-                        // HERE'S WHERE YOUR DATA IS
-                        print(arrayDatos)
-                        
-                    } catch {
-                        print(error.localizedDescription)
-                    }
-                }
-            }
-            dataTask.resume()
-        }
-    }
+    
     
 }
