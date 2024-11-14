@@ -61,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-733.33333333333337" y="123.88392857142857"/>
+            <point key="canvasLocation" x="-500" y="435"/>
         </scene>
         <!--Result Controller-->
         <scene sceneID="Uny-A5-wHJ">
@@ -301,7 +301,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hns-eT-0vC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="115.94202898550725" y="136.60714285714286"/>
+            <point key="canvasLocation" x="243" y="-294"/>
         </scene>
         <!--Upload Controller-->
         <scene sceneID="FIF-59-GDT">
@@ -327,9 +327,14 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imh-tk-dAk">
-                                <rect key="frame" x="80" y="460" width="254" height="35"/>
+                                <rect key="frame" x="50" y="460" width="314" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="zsB-ib-EMN"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Subir Puntuación"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Subir Puntuación">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="34"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="SubirPuntos:" destination="XU1-sE-wZw" eventType="touchUpInside" id="X5u-Fn-2aO"/>
                                 </connections>
@@ -345,18 +350,20 @@
                             <constraint firstItem="62f-QC-57X" firstAttribute="trailing" secondItem="CRh-kN-5wB" secondAttribute="trailing" constant="10" id="EzM-qS-KQa"/>
                             <constraint firstItem="62f-QC-57X" firstAttribute="trailing" secondItem="6Ay-mh-ze2" secondAttribute="trailing" constant="40" id="F6g-K0-2jH"/>
                             <constraint firstItem="6Ay-mh-ze2" firstAttribute="top" secondItem="62f-QC-57X" secondAttribute="top" constant="360" id="QLn-HL-yoO"/>
-                            <constraint firstItem="Imh-tk-dAk" firstAttribute="leading" secondItem="62f-QC-57X" secondAttribute="leading" constant="80" id="dA3-8d-vMd"/>
-                            <constraint firstItem="62f-QC-57X" firstAttribute="trailing" secondItem="Imh-tk-dAk" secondAttribute="trailing" constant="80" id="x3I-gJ-TC1"/>
+                            <constraint firstItem="Imh-tk-dAk" firstAttribute="leading" secondItem="62f-QC-57X" secondAttribute="leading" constant="50" id="dA3-8d-vMd"/>
+                            <constraint firstItem="62f-QC-57X" firstAttribute="trailing" secondItem="Imh-tk-dAk" secondAttribute="trailing" constant="50" id="x3I-gJ-TC1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hLB-Cr-HEh"/>
                     <connections>
                         <outlet property="UsernameInput" destination="6Ay-mh-ze2" id="Ft8-B9-Hy2"/>
+                        <outlet property="botonSubida" destination="Imh-tk-dAk" id="f75-uV-7yf"/>
+                        <segue destination="l3f-J3-h7U" kind="show" identifier="volverMenu" id="Gnv-jF-T29"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jV6-xE-uLp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="963" y="144"/>
+            <point key="canvasLocation" x="-2532" y="435"/>
         </scene>
         <!--Menu Controller-->
         <scene sceneID="aEZ-Ni-CJo">
@@ -428,10 +435,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ToB-mT-W0n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-733" y="769"/>
+            <point key="canvasLocation" x="-1607" y="1172"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="9nR-5u-9iU"/>
         <segue reference="yjm-9V-rga"/>
     </inferredMetricsTieBreakers>
     <resources>

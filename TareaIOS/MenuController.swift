@@ -14,6 +14,9 @@ class MenuController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        checkUsername()
+        
         checkPuntos()
         
     }
@@ -25,6 +28,14 @@ class MenuController: UIViewController{
         }
         else {
             puntosText.text = "Tu puntuacion máxima es: \n0"
+        }
+    }
+    
+    func checkUsername(){
+        if let nombre = UserDefaults.standard.value(forKey: "usernamelocal")
+        {
+            username = String(describing: nombre)
+            puntosText.text = "Bienvenido " + username + "!\n" + puntosText.text!
         }
     }
 }
