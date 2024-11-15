@@ -18,29 +18,34 @@ class DBUploadController: UIViewController{
     @IBOutlet weak var botonSubida: UIButton!
     
     @IBAction func SubirPuntos(_ sender: Any) {
-        UserDefaults.standard.set("pruebaJavi", forKey: "usernamelocal")
+        UserDefaults.standard.set("PruebaJavi", forKey: "usernamelocal")
         if finDePeticion == true && !puntuacionsubida{
-            if UsernameInput.text!.isEmpty{
-                
-            }
-            else{
-                botonSubida.alpha = 0
-                username = UsernameInput.text!
-                
-                if let nombre = UserDefaults.standard.value(forKey: "usernamelocal")
-                {
-                    UserDefaults.standard.set(UsernameInput.text!, forKey: "usernamelocal")
-                    PeticionesAPI.peticionGet(username: username) { puntuaciones in
-                        print(puntuaciones)
+            botonSubida.alpha = 0
+            
+            
+            if let nombre = UserDefaults.standard.value(forKey: "usernamelocal")
+            {
+                PeticionesAPI.peticionGet(username: username) { puntuaciones in
+                    print(puntuaciones)
+                    
+                    let Paquete = Puntuacion(name: username, score: puntuacionFinal)
+                    if !puntuaciones.isEmpty{
+                        PeticionesAPI.peticionPost(datos: Paquete, actualizar: true)
+                    }
+                    else{
+                        PeticionesAPI.peticionPost(datos: Paquete, actualizar: false)
                     }
                 }
-                else{
-                    UserDefaults.standard.set(UsernameInput.text!, forKey: "usernamelocal")
-                }
-                
-//                let Paquete = Puntuacion(name: username, score: puntuacionFinal)
-//                PeticionesAPI.peticionPost(datos: Paquete)
             }
+            else{
+                username = UsernameInput.text!
+                let Paquete = Puntuacion(name: username, score: puntuacionFinal)
+                UserDefaults.standard.set(UsernameInput.text!, forKey: "usernamelocal")
+                PeticionesAPI.peticionPost(datos: Paquete, actualizar: false)
+            }
+            
+//
+            
 //            puntuacionsubida = true
 //            botonSubida.titleLabel?.text = "Ir al menú"
         }

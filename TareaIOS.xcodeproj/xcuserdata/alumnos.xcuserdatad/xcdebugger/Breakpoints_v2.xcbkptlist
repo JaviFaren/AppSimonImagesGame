@@ -3,4 +3,70 @@
    uuid = "5F20FCE4-7BE4-4C0E-A692-7EDD40476D18"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "18C0B6A5-9F4E-47EF-83BE-8189A20089A5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TareaIOS/DBUploadController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "SubirPuntos(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "18C0B6A5-9F4E-47EF-83BE-8189A20089A5 - 919e7f5ca4e5ee26"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TareaIOS.DBUploadController.SubirPuntos(Any) -&gt; ()"
+                  moduleName = "TareaIOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alumnos/Documents/AppSimonImagesGame/TareaIOS/DBUploadController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "963">
+               </Location>
+               <Location
+                  uuid = "18C0B6A5-9F4E-47EF-83BE-8189A20089A5 - 35ea5d9a79f587f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;TareaIOS.Puntuacion&gt;) -&gt; () in TareaIOS.DBUploadController.SubirPuntos(Any) -&gt; ()"
+                  moduleName = "TareaIOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alumnos/Documents/AppSimonImagesGame/TareaIOS/DBUploadController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "61">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E540F70B-416D-44BD-81B0-F99EF37F75A6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TareaIOS/DBUploadController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "SubirPuntos(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -21,7 +21,6 @@ class PeticionesAPI{
                 if let data = data {
                     do {
                         let arrayDatos = try JSONDecoder().decode([Puntuacion].self, from: data) as [Puntuacion]
-                        print(arrayDatos)
                         finDePeticion = true
                         completion(arrayDatos)
                         
@@ -35,12 +34,18 @@ class PeticionesAPI{
         }
     }
     
-    static func peticionPost(datos: Puntuacion){
+    static func peticionPost(datos: Puntuacion, actualizar: Bool){
         finDePeticion = false
         let url = URL(string: APIURL)
 
         var peticionPOST = URLRequest(url: url!)
-        peticionPOST.httpMethod = "POST"
+        
+        if actualizar{
+            peticionPOST.httpMethod = "PATCH"
+        }
+        else{
+            peticionPOST.httpMethod = "POST"
+        }
 
         peticionPOST.setValue("application/json", forHTTPHeaderField: "Content-Type")
         peticionPOST.addValue(apiKEY, forHTTPHeaderField: "apikey")

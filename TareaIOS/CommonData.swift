@@ -35,4 +35,6 @@ struct Puntuacion: Codable {
 
 var arrayAPI = [Puntuacion]()
 
-var finDePeticion = false
+var finDePeticion = true
+
+var tiene_datosAPI = false
