@@ -33,6 +33,7 @@ class ViewController: UIViewController {
         mostrarImagenes()
     }
 
+    //Muestra al usuario las imagenes aleatorias que correspondan en intervalos de tiempo gestionados por un temporizador
     func mostrarImagenes(){
         
         for (index, _) in imagenesOrigen.enumerated(){
@@ -40,6 +41,9 @@ class ViewController: UIViewController {
         }
         
         imagenesPos.shuffle()
+        for x in imagenesPos{
+            print(imagenesOrigen[x]!)
+        }
         
         
         var imgpos = 0
@@ -59,6 +63,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //Una vez mostradas todas las imagenes se activa este boton para ir a la pantalla de solucion
     @IBAction func cambiarPantallaButton(_ sender: Any) {
         performSegue(withIdentifier: "SolutionScreen", sender: nil)
     }

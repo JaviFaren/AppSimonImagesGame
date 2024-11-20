@@ -17,6 +17,8 @@ class DBUploadController: UIViewController{
     
     @IBOutlet weak var botonSubida: UIButton!
     
+    //Comprueba si existen datos previos de este usuario en la api y en funcion de la respuesta realiza un post o un patch de la puntuacion del usuario
+    //Tambien permite volver al menu una vez subida la puntuacion
     @IBAction func SubirPuntos(_ sender: Any) {
         if finDePeticion == true && !puntuacionsubida{
             
@@ -51,6 +53,7 @@ class DBUploadController: UIViewController{
         
     }
     
+    //Muestra u oculta el campo para introducir en nombre de usuario en caso de detectar uno almacenado localmente
     override func viewDidLoad(){
         super.viewDidLoad()
         

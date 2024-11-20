@@ -33,7 +33,7 @@ class ResultController: UIViewController {
         
         
         
-        
+        //Se apagan todos los checkbox y elementos de UI no necesarios
         for (index, _) in imagenesOrigen.enumerated(){
             imagenSeleccionado.append(false)
             checkboxes[index].alpha = 0
@@ -50,6 +50,27 @@ class ResultController: UIViewController {
         ButtonAction(tag: sender.tag)
     }
     
+    //Activa o desactiva los checkbox correspondientes a las imagenes seleccionadas y elabora una respuesta para el usuario
+    func ButtonAction(tag: Int){
+        if !respuestasUser.isEmpty && respuestasUser[respuestasUser.count-1] == tag{
+            respuestasUser.remove(at: respuestasUser.count-1)
+            imagenSeleccionado[tag] = false
+            
+            ConfirmarButton.alpha = 0
+            checkboxes[tag].alpha = 0
+        }
+        else if !imagenSeleccionado[tag]{
+            respuestasUser.append(tag)
+            imagenSeleccionado[tag] = true
+            checkboxes[tag].alpha = 1
+            
+            if respuestasUser.count == imagenesOrigen.count{
+                ConfirmarButton.alpha = 1
+            }
+        }
+    }
+    
+    //Confirma la solucion elegida por el usuario y calcula la puntuacion, si es una respuesta perfecta y si se puede subir a la api o no
     @IBAction func ConfirmButton(_ sender: Any) {
         var streak = 0
         for (index, _) in respuestasUser.enumerated(){
@@ -98,6 +119,7 @@ class ResultController: UIViewController {
         ConfirmarButton.alpha = 0
     }
     
+    //Permite al usuario no subir la puntuacion a la api o no seguir jugando en funcion del estado del LeaveButtonState
     @IBAction func NoSubir(_ sender: Any) {
         if LeaveButtonState == 0{
             if perfectscore{
@@ -119,6 +141,7 @@ class ResultController: UIViewController {
         
     }
     
+    //Permite al usuario subir su puntuacion a la api o volver a jugar en funcion del estado del LeaveButtonState
     @IBAction func SiSubir(_ sender: Any) {
         if LeaveButtonState == 0{
             puntosFinales = String(puntuacionFinal)
@@ -135,24 +158,6 @@ class ResultController: UIViewController {
     
     
     
-    func ButtonAction(tag: Int){
-        if !respuestasUser.isEmpty && respuestasUser[respuestasUser.count-1] == tag{
-            respuestasUser.remove(at: respuestasUser.count-1)
-            imagenSeleccionado[tag] = false
-            
-            ConfirmarButton.alpha = 0
-            checkboxes[tag].alpha = 0
-        }
-        else if !imagenSeleccionado[tag]{
-            respuestasUser.append(tag)
-            imagenSeleccionado[tag] = true
-            checkboxes[tag].alpha = 1
-            
-            if respuestasUser.count == imagenesOrigen.count{
-                ConfirmarButton.alpha = 1
-            }
-        }
-    }
     
     
     

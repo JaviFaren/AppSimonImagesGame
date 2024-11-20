@@ -20,6 +20,8 @@ class MarcadoresController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
+    //Muestra todas las puntuaciones de los usuarios almacenados en la api (los datos se recogen en la pantalla del menu antes de poder acceder a esta pantalla)
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contenidosMarcadores.count
     }

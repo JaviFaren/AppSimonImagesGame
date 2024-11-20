@@ -33,11 +33,11 @@ class MenuController: UIViewController{
         }
     }
     
+    //Revisa en datos locales si existe una puntuacion almacenada de sesiones previas
     func checkPuntos(){
         if let puntosprevios = UserDefaults.standard.value(forKey: "PuntuacionMax")
         {
             puntosFinales = String(describing: puntosprevios)
-            print("puntos: ",puntosFinales)
             puntosText.text = "Tu puntuacion máxima es: \n" + String(describing: puntosprevios)
         }
         else {
@@ -46,15 +46,16 @@ class MenuController: UIViewController{
         
     }
     
+    //Revisa en datos locales si existe un nombre de usuario almacenado de sesiones previas
     func checkUsername(){
         if let nombre = UserDefaults.standard.value(forKey: "usernamelocal")
         {
             username = String(describing: nombre)
             puntosText.text = "Bienvenido " + username + "!\n" + puntosText.text!
-            print("nombre: ",username)
         }
     }
     
+    //Permite ir a ver los marcadores de la api
     @IBAction func IrMarcadores(_ sender: Any) {
         if puedeProceder{
             performSegue(withIdentifier: "IrMarcadores", sender: nil)
