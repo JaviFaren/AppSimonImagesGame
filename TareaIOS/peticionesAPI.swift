@@ -13,7 +13,10 @@ class PeticionesAPI{
     
     static func peticionGet(username: String,  completion: @escaping ([Puntuacion])-> Void){
         finDePeticion = false
-        let scoresURL = URL(string: APIURL + "?name=eq." + username)
+        var scoresURL = URL(string: APIURL)
+        if !username.isEmpty{
+            scoresURL = URL(string: APIURL + "?name=eq." + username)
+        }
         if let unwrappedURL = scoresURL {
             var request = URLRequest(url: unwrappedURL)
             request.addValue(apiKEY, forHTTPHeaderField: "apikey")
@@ -26,7 +29,7 @@ class PeticionesAPI{
                         
                         
                     } catch {
-                        print(error.localizedDescription)
+                        print("Error: ",error.localizedDescription)
                     }
                 }
             }
@@ -55,7 +58,6 @@ class PeticionesAPI{
             peticionPOST.httpBody = user
             let dataTask = URLSession.shared.dataTask(with: peticionPOST) { (data, response, error) in
                 if error == nil {
-                    print(response!)
                     finDePeticion = true
                 } else {
                     print(error!)

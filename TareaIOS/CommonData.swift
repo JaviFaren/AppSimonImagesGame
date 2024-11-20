@@ -27,6 +27,7 @@ let APIURL = "https://qhavrvkhlbmsljgmbknr.supabase.co/rest/v1/scores"
 
 var username = ""
 
+var puntosFinales = "0"
 
 struct Puntuacion: Codable {
     let name: String
@@ -38,3 +39,5 @@ var arrayAPI = [Puntuacion]()
 var finDePeticion = true
 
 var tiene_datosAPI = false
+
+var contenidosMarcadores = [String]()

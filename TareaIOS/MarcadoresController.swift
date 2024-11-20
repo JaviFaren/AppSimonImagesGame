@@ -5,4 +5,34 @@
 //  Created by alumnos on 20/11/24.
 //
 
-import Foundation
+import UIKit
+
+class MarcadoresController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+    
+    
+    
+    @IBOutlet weak var TablaMarcadores: UITableView!
+    
+    override func viewDidLoad() {
+        TablaMarcadores.delegate = self
+        TablaMarcadores.dataSource = self
+        
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return contenidosMarcadores.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = contenidosMarcadores[indexPath.row]
+        return cell
+    }
+    
+    
+    @IBAction func volverButton(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
+}

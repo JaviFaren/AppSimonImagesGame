@@ -18,17 +18,14 @@ class DBUploadController: UIViewController{
     @IBOutlet weak var botonSubida: UIButton!
     
     @IBAction func SubirPuntos(_ sender: Any) {
-        UserDefaults.standard.set("PruebaJavi", forKey: "usernamelocal")
         if finDePeticion == true && !puntuacionsubida{
-            botonSubida.alpha = 0
             
             
-            if let nombre = UserDefaults.standard.value(forKey: "usernamelocal")
-            {
+            if !username.isEmpty{
                 PeticionesAPI.peticionGet(username: username) { puntuaciones in
-                    print(puntuaciones)
+                    print("Puntuacioncitas: ",puntuaciones)
                     
-                    let Paquete = Puntuacion(name: username, score: puntuacionFinal)
+                    let Paquete = Puntuacion(name: username, score: Int(puntosFinales)!)
                     if !puntuaciones.isEmpty{
                         PeticionesAPI.peticionPost(datos: Paquete, actualizar: true)
                     }
@@ -40,18 +37,17 @@ class DBUploadController: UIViewController{
             else{
                 username = UsernameInput.text!
                 let Paquete = Puntuacion(name: username, score: puntuacionFinal)
-                UserDefaults.standard.set(UsernameInput.text!, forKey: "usernamelocal")
+                UserDefaults.standard.set(username, forKey: "usernamelocal")
+                UserDefaults.standard.set(puntosFinales, forKey: "PuntuacionMax")
                 PeticionesAPI.peticionPost(datos: Paquete, actualizar: false)
             }
-            
-//
-            
-//            puntuacionsubida = true
-//            botonSubida.titleLabel?.text = "Ir al menú"
+             
+            puntuacionsubida = true
+            botonSubida.setTitle("Ir al Menu", for: .normal)
         }
-//        else if puntuacionsubida{
-//            performSegue(withIdentifier: "volverMenu", sender: nil)
-//        }
+        else if puntuacionsubida{
+            performSegue(withIdentifier: "volverMenu", sender: nil)
+        }
         
     }
     
@@ -60,6 +56,9 @@ class DBUploadController: UIViewController{
         
         if !username.isEmpty{
             UsernameInput.alpha = 0
+        }
+        else{
+            UsernameInput.alpha = 1
         }
         botonSubida.alpha = 1
     }

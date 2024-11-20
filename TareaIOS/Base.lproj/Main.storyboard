@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -370,7 +371,7 @@
             <objects>
                 <viewController id="l3f-J3-h7U" customClass="MenuController" customModule="TareaIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="arB-FL-p8r">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VC2-nt-2az">
@@ -388,7 +389,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <state key="normal" title="Marcadores"/>
                                 <connections>
-                                    <segue destination="Zhk-Ta-216" kind="presentation" modalPresentationStyle="fullScreen" id="wgz-IV-4dl"/>
+                                    <action selector="IrMarcadores:" destination="l3f-J3-h7U" eventType="touchUpInside" id="8aB-8O-Nyn"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tu puntuacion máxima es:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gs-SY-hiT">
@@ -415,32 +416,80 @@
                     <navigationItem key="navigationItem" id="mry-32-EYS"/>
                     <connections>
                         <outlet property="puntosText" destination="4gs-SY-hiT" id="oGK-jk-BUo"/>
+                        <segue destination="Zhk-Ta-216" kind="show" identifier="IrMarcadores" id="XSY-kJ-jhm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vik-x9-cO4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1606" y="435"/>
         </scene>
-        <!--View Controller-->
+        <!--Marcadores Controller-->
         <scene sceneID="sBB-PW-PNW">
             <objects>
-                <viewController id="Zhk-Ta-216" sceneMemberID="viewController">
+                <viewController id="Zhk-Ta-216" customClass="MarcadoresController" customModule="TareaIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q2K-Nf-yY3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MARCADORES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SW8-yD-afA">
+                                <rect key="frame" x="30" y="80" width="354" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" name="AccentColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPj-wv-OFY">
+                                <rect key="frame" x="80" y="806" width="254" height="50"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Volver">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="volverButton:" destination="Zhk-Ta-216" eventType="touchUpInside" id="P0L-ZC-Mll"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aTb-aA-w35">
+                                <rect key="frame" x="40" y="152" width="334" height="614"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="enJ-3p-upL">
+                                        <rect key="frame" x="0.0" y="50" width="334" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="enJ-3p-upL" id="VTY-Ye-Vfo">
+                                            <rect key="frame" x="0.0" y="0.0" width="334" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="64s-Br-AI6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aTb-aA-w35" firstAttribute="top" secondItem="SW8-yD-afA" secondAttribute="bottom" constant="30" id="70N-kE-ozG"/>
+                            <constraint firstItem="64s-Br-AI6" firstAttribute="trailing" secondItem="aTb-aA-w35" secondAttribute="trailing" constant="40" id="OnW-Gy-VWB"/>
+                            <constraint firstItem="WPj-wv-OFY" firstAttribute="top" secondItem="aTb-aA-w35" secondAttribute="bottom" constant="40" id="Tc1-vR-hla"/>
+                            <constraint firstItem="WPj-wv-OFY" firstAttribute="leading" secondItem="64s-Br-AI6" secondAttribute="leading" constant="80" id="VHo-sm-Fp3"/>
+                            <constraint firstItem="SW8-yD-afA" firstAttribute="leading" secondItem="64s-Br-AI6" secondAttribute="leading" constant="30" id="aMf-6W-xlf"/>
+                            <constraint firstItem="64s-Br-AI6" firstAttribute="bottom" secondItem="WPj-wv-OFY" secondAttribute="bottom" constant="30" id="kIf-Qk-yNa"/>
+                            <constraint firstItem="64s-Br-AI6" firstAttribute="trailing" secondItem="WPj-wv-OFY" secondAttribute="trailing" constant="80" id="koB-ld-l41"/>
+                            <constraint firstAttribute="trailing" secondItem="SW8-yD-afA" secondAttribute="trailing" constant="30" id="mfw-FA-zZB"/>
+                            <constraint firstItem="SW8-yD-afA" firstAttribute="top" secondItem="64s-Br-AI6" secondAttribute="top" constant="80" id="nC8-gV-kFG"/>
+                            <constraint firstItem="aTb-aA-w35" firstAttribute="leading" secondItem="64s-Br-AI6" secondAttribute="leading" constant="40" id="r70-JG-R9I"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="NTK-cy-Fl6"/>
+                    <connections>
+                        <outlet property="TablaMarcadores" destination="aTb-aA-w35" id="kif-2m-6fY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ToB-mT-W0n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1607" y="1172"/>
+            <point key="canvasLocation" x="-2533" y="1172"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9nR-5u-9iU"/>
-        <segue reference="yjm-9V-rga"/>
+        <segue reference="Gnv-jF-T29"/>
+        <segue reference="Zir-wa-2LI"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="banderatonga" width="960" height="480"/>
@@ -452,6 +501,9 @@
         <image name="mondongo" width="201" height="251"/>
         <image name="neko" width="360" height="572"/>
         <image name="vaporeon" width="800" height="800"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

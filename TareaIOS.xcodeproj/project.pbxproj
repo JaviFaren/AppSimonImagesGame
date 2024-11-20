@@ -17,6 +17,7 @@
 		7F1AA1542CDB88BA003F7689 /* DBUploadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1AA1532CDB88BA003F7689 /* DBUploadController.swift */; };
 		7F3868FF2CE4B38100C5EB86 /* peticionesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3868FE2CE4B38100C5EB86 /* peticionesAPI.swift */; };
 		7F3869012CE4B4C900C5EB86 /* CommonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3869002CE4B4C900C5EB86 /* CommonData.swift */; };
+		7FDEEB992CEDD181001EBFDA /* MarcadoresController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDEEB982CEDD181001EBFDA /* MarcadoresController.swift */; };
 		7FE46EA62CDCEB2C00054CB8 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE46EA52CDCEB2C00054CB8 /* MenuController.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		7F1AA1532CDB88BA003F7689 /* DBUploadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUploadController.swift; sourceTree = "<group>"; };
 		7F3868FE2CE4B38100C5EB86 /* peticionesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = peticionesAPI.swift; sourceTree = "<group>"; };
 		7F3869002CE4B4C900C5EB86 /* CommonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonData.swift; sourceTree = "<group>"; };
+		7FDEEB982CEDD181001EBFDA /* MarcadoresController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarcadoresController.swift; sourceTree = "<group>"; };
 		7FE46EA52CDCEB2C00054CB8 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +74,7 @@
 				11E2A5C92CB7F44F00878A56 /* ViewController.swift */,
 				11BD54762CD2277E00640947 /* ResultController.swift */,
 				7F1AA1532CDB88BA003F7689 /* DBUploadController.swift */,
+				7FDEEB982CEDD181001EBFDA /* MarcadoresController.swift */,
 				7F3868FE2CE4B38100C5EB86 /* peticionesAPI.swift */,
 				7F3869002CE4B4C900C5EB86 /* CommonData.swift */,
 				11E2A5CB2CB7F44F00878A56 /* Main.storyboard */,
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F3868FF2CE4B38100C5EB86 /* peticionesAPI.swift in Sources */,
+				7FDEEB992CEDD181001EBFDA /* MarcadoresController.swift in Sources */,
 				11BD54772CD2277E00640947 /* ResultController.swift in Sources */,
 				11E2A5CA2CB7F44F00878A56 /* ViewController.swift in Sources */,
 				11E2A5C62CB7F44F00878A56 /* AppDelegate.swift in Sources */,

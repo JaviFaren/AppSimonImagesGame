@@ -31,7 +31,6 @@ class ResultController: UIViewController {
         super.viewDidLoad()
         
         
-        UserDefaults.standard.set(0, forKey: "PuntuacionMax")
         
         
         
@@ -76,7 +75,8 @@ class ResultController: UIViewController {
         BotonMarcadoresSi.alpha = 1
         if let puntosAlm = UserDefaults.standard.value(forKey: "PuntuacionMax")
         {
-            if puntuacionFinal > puntosAlm as! Int{
+            let puntostransformado = Int(String(describing: puntosAlm))
+            if puntuacionFinal > puntostransformado!{
                 TextoPuntuacion.text = TextoPuntuacion.text! + "\nNuevo Record! ¿Quieres subirlo a marcadores?"
             }
             else{
@@ -112,6 +112,7 @@ class ResultController: UIViewController {
         }
         else{
             imagenesPos.removeAll()
+            puntuacionFinal = 0
             performSegue(withIdentifier: "ToMainMenu", sender: nil)
         }
         
@@ -120,6 +121,7 @@ class ResultController: UIViewController {
     
     @IBAction func SiSubir(_ sender: Any) {
         if LeaveButtonState == 0{
+            puntosFinales = String(puntuacionFinal)
             performSegue(withIdentifier: "Subirdatos", sender: nil)
         }
         else{
